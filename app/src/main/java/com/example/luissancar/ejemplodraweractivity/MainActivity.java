@@ -1,5 +1,6 @@
 package com.example.luissancar.ejemplodraweractivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
@@ -81,22 +83,37 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         TextView t=(TextView)findViewById(R.id.texto);
+        RelativeLayout contenedor=(RelativeLayout)findViewById(R.id.content_main);
 
         if (id == R.id.camara) {
-
+            contenedor.setBackgroundColor(Color.BLACK);
+            t.setTextColor(Color.RED);
             t.setText("Camara");
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            t.setText("gallery");
+            contenedor.setBackgroundColor(Color.RED);
+            t.setTextColor(Color.BLACK);
+            t.setText("Galería");
 
         } else if (id == R.id.nav_slideshow) {
-            t.setText("");
+            contenedor.setBackgroundColor(Color.BLUE);
+            t.setTextColor(Color.RED);
+            t.setText("slideshow");
 
         } else if (id == R.id.nav_manage) {
+            contenedor.setBackgroundColor(Color.YELLOW);
+            t.setTextColor(Color.RED);
+            t.setText("manager");
 
         } else if (id == R.id.nav_share) {
+            contenedor.setBackgroundColor(Color.CYAN);
+            t.setTextColor(Color.YELLOW);
+            t.setText("share");
 
         } else if (id == R.id.nav_send) {
+            contenedor.setBackgroundColor(Color.GREEN);
+            t.setTextColor(Color.WHITE);
+            t.setText("Send");
 
         }
 
